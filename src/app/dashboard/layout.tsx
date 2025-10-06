@@ -35,7 +35,9 @@ export default async function DashboardLayout({
             <LogoutButton />
           </div>
         </nav>
-        {children}
+        <div className="p-7">
+          {children}
+        </div>
       </div>
     </div>
   );

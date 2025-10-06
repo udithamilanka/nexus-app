@@ -8,41 +8,7 @@ const SSH_PRIVATE_KEY = process.env.SSH_PRIVATE_KEY?.replace(/\\n/g, "\n");
 
 
 const COMMANDS = [
-  `cd /var/www/admin.uditha.space/nexus-app && \
-   export NVM_DIR=~/.nvm && \
-   source ~/.nvm/nvm.sh && \
-   nvm use 22 && \
-   node -v && \
-   git checkout production && \
-   git branch && \
-   git stash && \
-   git pull && \
-   npm install && \
-   npx browserslist@latest --update-db && \
-   if [ -d ".next" ]; then \
-     echo "Backing up current .next folder..." && \
-     rm -rf .next.backup && \
-     mv .next .next.backup && \
-     echo "Backup completed"; \
-   fi && \
-   echo "Starting build..." && \
-   if npm run build; then \
-     echo "Build successful!" && \
-     rm -rf .next.backup && \
-     pm2 restart nexus_app_3011 && \
-     echo "Deployment Completed Successfully"; \
-   else \
-     echo "Build failed! Rolling back..." && \
-     if [ -d ".next.backup" ]; then \
-       rm -rf .next && \
-       mv .next.backup .next && \
-       pm2 restart admin_app && \
-       echo "Rollback completed"; \
-     else \
-       echo "No backup found, cannot rollback"; \
-     fi && \
-     exit 1; \
-   fi`
+  `htop`
 ];
 
 
