@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const token = generateToken(user._id.toString());
+    const token = generateToken(user._id.toString(), user.role);
     await setAuthCookie(token);
 
     return NextResponse.json({
