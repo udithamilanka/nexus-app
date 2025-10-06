@@ -148,7 +148,7 @@ export async function GET(req: NextRequest) {
       if [ -d ".next.backup" ]; then \
         rm -rf .next && \
         mv .next.backup .next && \
-        pm2 restart admin_app && \
+        pm2 restart nexus_app_3011 && \
         echo "Rollback completed"; \
       else \
         echo "No backup found, cannot rollback"; \
