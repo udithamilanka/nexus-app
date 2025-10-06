@@ -18,6 +18,7 @@ export default function CreateDeploymentPage() {
     nodeVersion: "20",
     branch: "production",
     envType: "prod",
+    appNamePM2: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -75,6 +76,7 @@ export default function CreateDeploymentPage() {
             "hostedPath",
             "nodeVersion",
             "branch",
+            "appNamePM2",
           ] as (keyof DeploymentForm)[]
         ).map((field) => (
           <div key={field}>

@@ -11,6 +11,7 @@ export interface DeploymentForm {
   nodeVersion: string;
   branch: string;
   envType: "dev" | "qa" | "prod";
+  appNamePM2: string;
 }
 
 // Optional: define the expected API response shape
@@ -35,4 +36,5 @@ export interface Deployment {
   branch: string;
   envType: "dev" | "qa" | "prod";
   createdAt: string;
+  appNamePM2: string;
 }

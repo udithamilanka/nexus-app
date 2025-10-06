@@ -12,6 +12,7 @@ const DeploymentSchema = new Schema(
     nodeVersion: { type: String, required: true },
     branch: { type: String, required: true },
     envType: { type: String, enum: ["dev", "qa", "prod"], required: true },
+    appNamePM2: { type: String, required: true },
   },
   { timestamps: true }
 );

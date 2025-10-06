@@ -10,8 +10,17 @@ export async function POST(req: NextRequest) {
   return NextResponse.json(deployment);
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   await connectDB();
-  const deployments = await Deployment.find().sort({ createdAt: -1 });
+
+  // Extract the query parameter from the request URL
+  const { searchParams } = new URL(req.url);
+  const envType = searchParams.get("envType");
+
+  // Build query dynamically based on envType
+  const query = envType ? { envType } : {};
+
+  const deployments = await Deployment.find(query).sort({ createdAt: -1 });
+
   return NextResponse.json(deployments);
 }
